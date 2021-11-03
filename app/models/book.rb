@@ -7,6 +7,8 @@ class Book < ApplicationRecord
       favorites.where(user_id: user.id).exists?
    end
 
+   scope :ranking, -> { includes(:favorites).order('favorites.book_id desc')}
+
    validates :title, presence: true
    validates :body, presence: true, length:{maximum: 200}
 
