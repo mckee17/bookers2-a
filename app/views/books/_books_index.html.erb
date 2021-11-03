@@ -1,4 +1,4 @@
-<% books.each do |book| %>
+<% books.ranking.each do |book| %>
 <% user = book.user %>
 <tr>
   <td><%= link_to user_path(user.id) do %>
