@@ -29,15 +29,14 @@
               <td>フォロワー数 <%= user.followed.count %></td>
 
               <% if user != current_user %>
-                <% unless Relationship.exists?(follower_id: current_user.id, followed_id: userinfo.id) %>
-              <td><%= link_to user_relationships_path(user), method: :post, class:"btn btn-sm btn-primary" do %>
+                <% unless Relationship.exists?(follower_id: current_user.id, followed_id: user.id) %>
+              <td><%= link_to user_relationships_path(user), method: :post, class:"col-md-10 btn btn-sm btn-primary" do %>
                       フォロー<% end %></td>
                 <% else %>
-              <td><%= link_to user_relationships_path(user), method: :delete, class:"btn btn-sm btn-danger" do %>
+              <td><%= link_to user_relationships_path(user), method: :delete, class:"col-md-10 btn btn-sm btn-danger" do %>
                       解除<% end %></td>
                 <% end %>
               <% else %>
-              <td></td>
               <td></td>
               <% end %>
 
