@@ -35,7 +35,7 @@
         <%= link_to user_relationships_path(userinfo), method: :delete, class:"btn btn-block btn-danger" do %>
           解除<% end %>
         <% if Relationship.exists?(follower_id: userinfo.id, followed_id: current_user.id) %>
-          <%= link_to dms_path(user1: userinfo.id, user2: current_user.id), method: :post do %>
+          <%= link_to dms_path(user1: userinfo.id, user2: current_user.id), method: :post, class:"btn btn-block btn-primary" do %>
           チャット画面<% end %>
         <% end %>
       <% else %>

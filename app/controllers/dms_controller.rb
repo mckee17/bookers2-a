@@ -1,6 +1,10 @@
 class DmsController < ApplicationController
   def show
     @dm = Dm.find(params[:id])
+    @member = @dm.users
+    if DmMessage.where(dm_id: params[:id])
+      @messages = DmMessage.where(dm_id: params[:id])
+    end
   end
 
   def create

@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :follower_users, through: :followed, source: :follower
   
   has_many :dm_members, dependent: :destroy
+  has_many :dm_messages, dependent: :destroy
 
   attachment :profile_image
 
