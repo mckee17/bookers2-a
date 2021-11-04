@@ -18,4 +18,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :dms, only:[:show,:create] do
+    resource :dm_members, only:[:create]
+  end
+  
 end
