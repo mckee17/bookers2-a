@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
 
+  impressionist :actions => [:show]
+
   def index
     @books = Book.all
     @booknew = Book.new
@@ -12,6 +14,7 @@ class BooksController < ApplicationController
     @booknew = Book.new
     @userinfo = @book.user
     @book_comment = BookComment.new
+    impressionist(@book)
   end
 
   def edit

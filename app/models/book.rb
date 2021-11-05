@@ -12,6 +12,8 @@ class Book < ApplicationRecord
       from = (to - 6.day).beginning_of_day
       sort_by{|book| -book.favorites.where(created_at: from...to).count}
    end
+   
+   is_impressionable
 
    validates :title, presence: true
    validates :body, presence: true, length:{maximum: 200}

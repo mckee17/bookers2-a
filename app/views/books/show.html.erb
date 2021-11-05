@@ -27,12 +27,13 @@
               <td id="favorite_btn_<%= @book.id %>"><%= render'favorites/favorites', book: @book %></td>
 
               <td id="comments_count">コメント数: <%= @book.book_comments.count %></td>
+              <td>PV数： <%= @book.impressionist_count %></td>
               <td><% if @book.user == current_user %>
-                  <%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-sm btn-success" %>
-                  <% end %></td>
+                   <%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-sm btn-success" %>
+                  <% end %> </td>
               <td><% if @book.user == current_user %>
                   <%= link_to "Destroy", book_path(@book.id), method: :delete, class:"btn btn-sm btn-danger" %>
-                  <% end %></td>
+                  <% end %> </td>
             </tr>
           </tbody>
         </table>
